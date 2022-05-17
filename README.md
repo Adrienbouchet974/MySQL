@@ -71,7 +71,7 @@ VALUES
 ### Supprimer un acteur
 
 ```sql
-DELETE `numéro de l\'ID` FROM `actor`
+DELETE FROM `actor` WHERE `actor_ID` = value
 ```
 
 ### Les 3 derniers acteurs ajoutés
