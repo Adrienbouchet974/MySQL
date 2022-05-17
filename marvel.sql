@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : mar. 17 mai 2022 à 08:40
+-- Généré le : mar. 17 mai 2022 à 11:43
 -- Version du serveur :  8.0.19
 -- Version de PHP : 7.4.11
 
@@ -202,6 +202,7 @@ INSERT INTO `movie/actor` (`movie_ID`, `actor_ID`) VALUES
 (2, 6),
 (2, 7),
 (2, 8),
+(2, 11),
 (3, 1),
 (3, 2),
 (3, 9),
@@ -218,11 +219,11 @@ INSERT INTO `movie/actor` (`movie_ID`, `actor_ID`) VALUES
 (5, 20),
 (5, 21),
 (6, 1),
+(6, 11),
 (6, 13),
 (6, 15),
-(6, 22),
 (6, 17),
-(6, 11),
+(6, 22),
 (6, 23),
 (7, 1),
 (7, 2),
@@ -234,8 +235,8 @@ INSERT INTO `movie/actor` (`movie_ID`, `actor_ID`) VALUES
 (8, 15),
 (8, 16),
 (8, 26),
-(9, 17),
 (9, 11),
+(9, 17),
 (9, 20),
 (9, 27),
 (9, 28),
@@ -247,10 +248,10 @@ INSERT INTO `movie/actor` (`movie_ID`, `actor_ID`) VALUES
 (10, 34),
 (10, 35),
 (11, 1),
+(11, 11),
+(11, 13),
 (11, 17),
 (11, 22),
-(11, 13),
-(11, 11),
 (11, 23),
 (11, 36),
 (11, 37),
@@ -259,16 +260,15 @@ INSERT INTO `movie/actor` (`movie_ID`, `actor_ID`) VALUES
 (12, 40),
 (12, 41),
 (12, 42),
-(13, 17),
 (13, 1),
 (13, 11),
+(13, 17),
 (13, 20),
 (13, 27),
 (14, 43),
 (14, 44),
 (14, 45),
 (14, 46),
-(141, 47),
 (14, 48),
 (15, 31),
 (15, 32),
@@ -276,52 +276,51 @@ INSERT INTO `movie/actor` (`movie_ID`, `actor_ID`) VALUES
 (15, 34),
 (15, 35),
 (15, 49),
+(16, 1),
 (16, 50),
 (16, 51),
-(16, 1),
 (16, 52),
 (16, 53),
 (17, 13),
-(17, 22),
 (17, 15),
+(17, 16),
+(17, 22),
+(17, 26),
 (17, 54),
 (17, 55),
-(17, 26),
-(17, 16),
 (18, 56),
 (18, 57),
 (18, 58),
 (18, 59),
 (18, 60),
 (19, 1),
+(19, 11),
+(19, 13),
 (19, 17),
 (19, 22),
-(19, 13),
-(19, 11),
 (19, 61),
 (20, 39),
 (20, 40),
 (20, 41),
 (20, 62),
 (20, 63),
+(21, 28),
 (21, 64),
 (21, 65),
-(21, 28),
 (21, 66),
 (21, 67),
 (22, 1),
+(22, 11),
+(22, 13),
 (22, 17),
 (22, 22),
-(22, 13),
-(22, 11),
 (22, 23),
 (22, 61),
-(23, 50),
-(23, 68),
 (23, 28),
+(23, 50),
 (23, 53),
+(23, 68),
 (23, 69),
-(2, 11),
 (24, 72),
 (24, 73),
 (24, 74),
@@ -336,17 +335,18 @@ INSERT INTO `movie/actor` (`movie_ID`, `actor_ID`) VALUES
 (26, 83),
 (26, 84),
 (26, 85),
+(27, 43),
 (27, 50),
+(27, 53),
 (27, 70),
 (27, 71),
-(27, 53),
-(27, 43),
-(28, 43),
 (28, 37),
+(28, 43),
 (28, 44),
 (28, 46),
 (28, 47),
-(28, 86);
+(28, 86),
+(141, 47);
 
 --
 -- Index pour les tables déchargées
@@ -356,13 +356,15 @@ INSERT INTO `movie/actor` (`movie_ID`, `actor_ID`) VALUES
 -- Index pour la table `actor`
 --
 ALTER TABLE `actor`
-  ADD PRIMARY KEY (`actor_ID`);
+  ADD PRIMARY KEY (`actor_ID`),
+  ADD UNIQUE KEY `Personne Unique` (`First_name`,`Last_name`,`Date_of_Birth`) USING BTREE;
 
 --
 -- Index pour la table `movie`
 --
 ALTER TABLE `movie`
-  ADD PRIMARY KEY (`movie_ID`);
+  ADD PRIMARY KEY (`movie_ID`),
+  ADD UNIQUE KEY `Film Unique` (`title`,`release_date`) USING BTREE;
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
