@@ -76,3 +76,10 @@ SELECT `First_name`,`Last_name`,`Update_time`
 FROM `actor`
 ORDER BY `Update_time` DESC LIMIT 3
 ```
+Correction by : Flo ckeck 😉  
+
+Correction by : Cedric check
+
+Petit soucis : - Requête 2 pas viable sur le long terme   
+requête 3 et 4  - On dois chercher après l'id dans le tableau en question 
+Requête Bonus   modifier un film ne fonctionne pas
