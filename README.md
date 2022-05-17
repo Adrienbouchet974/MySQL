@@ -19,7 +19,7 @@ WHERE `Date_of_Birth` NOT BETWEEN '1992-05-17' AND '2022-05-17'
 ORDER BY `Last_name`
 ```
 
-### La liste des acteurs pour un film donnés
+### La liste des acteurs pour un film donné
 
 ```sql
 SELECT *
@@ -27,7 +27,7 @@ FROM `movie/actor`
 NATURAL JOIN `actor` WHERE `movie_ID` = valeur
 ```
 
-### La liste desfilms pour un acteur donné
+### La liste des films pour un acteur donné
 
 ```sql
 SELECT *
@@ -50,13 +50,8 @@ VALUES
 
 ```sql
 UPDATE `movie` 
-SET `movie_ID`= valeur_souhaité,
-`title`= nom du film,
-`release_date`=  format AAAA-MM-JJ,
-`duration`= 00:00:00,
-`director`= nom du directeur,
-`creation_date`= CURRENT_DATE(),
-`update_time`= CURRENT_TIEMSTAMP;
+SET `title` = 'Hulk' 
+WHERE `movie`.`movie_ID` = 2;
 ```
 
 ### Ajouter un acteur
