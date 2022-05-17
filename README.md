@@ -10,10 +10,13 @@ FROM `marvel`.`movie`
 ORDER BY `release_date` DESC
 ```
 
-### Noms, Prénoms et Ages des acteurs de plus de 30 dans l'ordre alphabétique
+### Noms, Prénoms et Ages des acteurs de plus de 30 dans l'ordre alphabétique des noms de familles
 
 ```
-
+SELECT `First_name`,`Last_name`,`Date_of_Birth`
+FROM `actor`
+WHERE `Date_of_Birth` NOT BETWEEN '1992-05-17' AND '2022-05-17' 
+ORDER BY `Last_name`
 ```
 
 ### La liste des acteurs pour un film donnés
